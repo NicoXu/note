@@ -1,0 +1,32 @@
+## 代理模式 ##
+### 静态代理###
+
+#####接口#####
+    public interface Istar{
+	void getShow();
+	void careFamily();
+	}
+#####实现类#####
+    public class Mstar implements Istar{
+	public void getShow(){
+		System.out.println("star get show");
+	}
+	public void careFamily(){
+		System.out.println("star care family");
+	}
+	}
+#####代理类#####
+	public class Agent implements Istar{
+
+		private Istar istar;
+		public Agent(){
+			this.istar=new Mstar();
+		}
+		public void getShow(){
+			istar.getShow();
+		}
+		public void careFamily(){
+			istar.careFamily();
+		}
+	}
+###动态代理###
